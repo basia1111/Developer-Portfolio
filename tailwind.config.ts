@@ -4,6 +4,17 @@ export default {
   content: ['./pages/**/*.{js,ts,jsx,tsx,mdx}', './components/**/*.{js,ts,jsx,tsx,mdx}', './app/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     extend: {
+      keyframes: {
+        twinkle: {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0.3' },
+        },
+      },
+      animation: {
+        'twinkle-1': 'twinkle 4s infinite',
+        'twinkle-2': 'twinkle 3s infinite 1s',
+        'twinkle-3': 'twinkle 5s infinite 0.5s',
+      },
       colors: {
         // Dark Mode
         dark: {
