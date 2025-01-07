@@ -28,7 +28,7 @@ const SkillsSection = () => {
     {
       id: 'frontend',
       label: 'Frontend',
-      icon: <Code2 className='h-4 w-4' />,
+      icon: <Code2 className='h-3 w-3 md:h-4 md:w-4' />,
       skills: [
         { icon: <SiHtml5 size={34} />, name: 'HTML5', color: 'hover:text-[#E34F26]' },
         { icon: <SiCss3 size={34} />, name: 'CSS3', color: 'hover:text-[#1572B6]' },
@@ -42,7 +42,7 @@ const SkillsSection = () => {
     {
       id: 'backend',
       label: 'Backend',
-      icon: <Server className='h-4 w-4' />,
+      icon: <Server className='h-3 w-3 md:h-4 md:w-4' />,
       skills: [
         { icon: <SiPhp size={34} />, name: 'PHP', color: 'hover:text-[#777BB4]' },
         { icon: <SiNodedotjs size={34} />, name: 'Node.js', color: 'hover:text-[#339933]' },
@@ -54,7 +54,7 @@ const SkillsSection = () => {
     {
       id: 'tools',
       label: 'Database & Tools',
-      icon: <Database className='h-4 w-4' />,
+      icon: <Database className='h-3 w-3 md:h-4 md:w-4' />,
       skills: [
         { icon: <SiMongodb size={34} />, name: 'MongoDB', color: 'hover:text-[#47A248]' },
         { icon: <SiMysql size={34} />, name: 'MySQL', color: 'hover:text-[#4479A1]' },
@@ -68,20 +68,20 @@ const SkillsSection = () => {
   return (
     <section id='skills' className='mx-auto max-w-7xl px-4 py-12 md:px-6 md:py-24'>
       <div className='text-center'>
-        <span className='text-accent-primary dark:text-accent-light font-mono text-sm'>❯ My Tech Stack</span>
-        <h2 className='text-light-text-primary dark:text-dark-text-primary mt-4 text-2xl font-bold md:text-4xl'>Technical Skills</h2>
+        <span className='font-mono text-sm text-accent-primary dark:text-accent-light'>❯ My Tech Stack</span>
+        <h2 className='mt-4 text-2xl font-bold text-light-text-primary md:text-4xl dark:text-dark-text-primary'>Technical Skills</h2>
       </div>
 
-      <div className='border-light-border-primary dark:border-dark-border-accent mx-auto mt-6 max-w-3xl border-b md:mt-12'>
-        <div className='flex justify-center gap-4'>
+      <div className='mx-auto mt-6 max-w-3xl border-b border-light-border-primary md:mt-12 dark:border-dark-border-accent'>
+        <div className='flex justify-center md:gap-4'>
           {tabs.map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`inline-flex items-center gap-2 px-4 py-3 text-sm font-medium transition-colors ${
+              className={`inline-flex items-center gap-1 px-2 py-3 text-[14px] font-medium transition-colors md:gap-2 md:px-4 md:text-sm ${
                 activeTab === tab.id
-                  ? 'text-accent-primary dark:text-accent-light border-accent-primary dark:border-accent-light -mb-px border-b-2'
-                  : 'text-light-text-muted dark:text-dark-text-secondary hover:text-accent-primary dark:hover:text-accent-light'
+                  ? '-mb-px border-b-2 border-accent-primary text-accent-primary dark:border-accent-light dark:text-accent-light'
+                  : 'text-light-text-muted hover:text-accent-primary dark:text-dark-text-secondary dark:hover:text-accent-light'
               }`}
             >
               {tab.icon}
@@ -98,10 +98,10 @@ const SkillsSection = () => {
               <div className='grid grid-cols-3 gap-8 md:grid-cols-4 lg:grid-cols-7'>
                 {tab.skills.map((skill, index) => (
                   <div key={index} className='group flex flex-col items-center gap-3'>
-                    <div className={`text-light-text-muted dark:text-dark-text-secondary transition-all duration-300 ${skill.color} group-hover:scale-110`}>
+                    <div className={`text-light-text-muted transition-all duration-300 dark:text-dark-text-secondary ${skill.color} group-hover:scale-110`}>
                       {skill.icon}
                     </div>
-                    <span className='text-light-text-primary dark:text-dark-text-primary text-sm font-medium'>{skill.name}</span>
+                    <span className='text-sm font-medium text-light-text-primary dark:text-dark-text-primary'>{skill.name}</span>
                   </div>
                 ))}
               </div>

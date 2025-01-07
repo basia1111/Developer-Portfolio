@@ -18,30 +18,56 @@ const SmoothMorphingBlobs = () => {
   };
 
   return (
-    <div className='relative z-10 flex w-full items-center justify-center opacity-70 dark:opacity-100'>
-      <svg xmlns='http://www.w3.org/2000/svg' viewBox='-100 -100 200 200' width='100%' className='h-[300px] md:h-[500px]'>
-        <defs>
-          <linearGradient id='blob-gradient' x1='0%' y1='0%' x2='100%' y2='100%'>
-            <stop offset='0%' stopColor='#6366f1' />
-            <stop offset='100%' stopColor='#322d9b' />
-          </linearGradient>
-        </defs>
-
-        <motion.path
-          fill='url(#blob-gradient)'
-          variants={blobVariants}
-          animate={{
-            d: [blobVariants.one.d, blobVariants.two.d, blobVariants.three.d, blobVariants.five.d, blobVariants.one.d],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: 'easeInOut',
-            times: [0, 0.2, 0.5, 0.7, 0.8, 1],
-          }}
-          style={{ transform: 'scale(1.25)' }}
-        />
-      </svg>
+    <div className='relative z-10 flex w-full items-center justify-center'>
+      {document.documentElement.classList.contains('dark') ? (
+        <svg xmlns='http://www.w3.org/2000/svg' viewBox='-100 -100 200 200' width='100%' className='h-[300px] md:h-[500px]'>
+          <defs>
+            <linearGradient id='blob-gradient' x1='0%' y1='0%' x2='100%' y2='100%'>
+              <stop offset='0%' stopColor='#6366f1' />
+              <stop offset='50%' stopColor='#4338ca' />
+              <stop offset='100%' stopColor='#312e81' />
+            </linearGradient>
+          </defs>
+          <motion.path
+            fill='url(#blob-gradient)'
+            variants={blobVariants}
+            animate={{
+              d: [blobVariants.one.d, blobVariants.two.d, blobVariants.three.d, blobVariants.five.d, blobVariants.one.d],
+            }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: 'easeInOut',
+              times: [0, 0.2, 0.5, 0.7, 0.8, 1],
+            }}
+            style={{ transform: 'scale(1.25)' }}
+          />
+        </svg>
+      ) : (
+        <svg xmlns='http://www.w3.org/2000/svg' viewBox='-100 -100 200 200' width='100%' className='h-[300px] md:h-[500px]'>
+          <defs>
+            <linearGradient id='blob-gradient' x1='0%' y1='0%' x2='100%' y2='100%'>
+              <stop offset='0%' stopColor='#c7d2fe' />
+              <stop offset='50%' stopColor='#818cf8' />
+              <stop offset='100%' stopColor='#6366f1' />
+            </linearGradient>
+          </defs>
+          <motion.path
+            fill='url(#blob-gradient)'
+            variants={blobVariants}
+            animate={{
+              d: [blobVariants.one.d, blobVariants.two.d, blobVariants.three.d, blobVariants.five.d, blobVariants.one.d],
+            }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: 'easeInOut',
+              times: [0, 0.2, 0.5, 0.7, 0.8, 1],
+            }}
+            style={{ transform: 'scale(1.25)' }}
+          />
+        </svg>
+      )}
     </div>
   );
 };

@@ -37,32 +37,38 @@ const ProjectsSection = () => {
     <section id='projects' className='relative py-6 md:py-16'>
       <div className='mx-auto max-w-7xl px-4 md:px-6'>
         <h2 className='mb-8 text-center md:mb-16'>
-          <span className='text-accent-primary dark:text-accent-light font-mono text-sm'>❯ Recent work </span>
-          <span className='text-light-text-primary dark:text-dark-text-primary mt-2 block text-2xl font-bold md:mt-4 md:text-4xl'>Featured Projects</span>
+          <span className='font-mono text-sm text-accent-primary dark:text-accent-light'>❯ Recent work </span>
+          <span className='mt-2 block text-2xl font-bold text-light-text-primary md:mt-4 md:text-4xl dark:text-dark-text-primary'>Featured Projects</span>
         </h2>
 
         <div className='grid gap-8 md:grid-cols-2 lg:grid-cols-3'>
           {projects.map((project, index) => (
             <div key={index} className='group h-full'>
-              <div className='hover:border-accent-primary/30 hover:shadow-accent-primary/5 border-accent-primary/20 bg-light-bg-secondary dark:hover:shadow-accent-light/5 flex h-full flex-col rounded-xl border p-5 shadow-sm transition-all hover:shadow-lg dark:bg-gray-950/40'>
-                <div className='relative mb-4 overflow-hidden rounded-lg'>
-                  <img src={project.image} alt={project.title} className='aspect-[16/9] w-full object-cover' />
-                </div>
-                <h3 className='text-light-text-primary dark:text-dark-text-primary mb-3 text-xl font-semibold'>{project.title}</h3>
-                <p className='text-light-text-muted dark:text-dark-text-secondary mb-5 text-sm'>{project.description}</p>
+              <div className='flex h-full flex-col rounded-xl border border-accent-primary/20 bg-light-bg-secondary p-5 shadow-sm transition-all hover:border-accent-primary/30 hover:shadow-lg hover:shadow-accent-primary/5 dark:bg-gray-950/40 dark:hover:shadow-accent-light/5'>
+                <a href={project.liveLink}>
+                  {' '}
+                  <div className='relative mb-4 overflow-hidden rounded-lg'>
+                    <img src={project.image} alt={project.title} className='aspect-[16/9] w-full object-cover' />
+                  </div>{' '}
+                </a>
+                <a href={project.liveLink}>
+                  {' '}
+                  <h3 className='mb-3 text-xl font-semibold text-light-text-primary dark:text-dark-text-primary'>{project.title}</h3>
+                </a>
+                <p className='mb-5 text-sm text-light-text-muted dark:text-dark-text-secondary'>{project.description}</p>
                 <div className='mt-auto'>
                   <div className='mb-4 flex flex-wrap gap-2'>
                     {project.techStack.map((tech) => (
-                      <span key={tech} className='bg-light-bg-hover/70 text-accent-primary rounded-md px-2.5 py-1 text-xs font-medium dark:bg-gray-950/40'>
+                      <span key={tech} className='rounded-md bg-light-bg-hover/70 px-2.5 py-1 text-xs font-medium text-accent-primary dark:bg-gray-950/40'>
                         {tech}
                       </span>
                     ))}
                   </div>
-                  <div className='border-accent-primary/20 flex gap-4 border-t pt-4'>
-                    <a href={project.githubLink} target='blank' className='hover:text-accent-primary text-gray-400 transition-colors'>
+                  <div className='flex gap-4 border-t border-accent-primary/20 pt-4'>
+                    <a href={project.githubLink} className='text-gray-400 transition-colors hover:text-accent-primary'>
                       <Github className='h-5 w-5' />
                     </a>
-                    <a href={project.liveLink} target='blank' className='hover:text-accent-primary text-gray-400 transition-colors'>
+                    <a href={project.liveLink} className='text-gray-400 transition-colors hover:text-accent-primary'>
                       <ExternalLink className='h-5 w-5' />
                     </a>
                   </div>

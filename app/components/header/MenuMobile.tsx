@@ -39,12 +39,13 @@ const MenuMobile = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className='block sm:hidden'>
+    <div className='flex items-center sm:hidden'>
+      <ModeSwitch />
       <Hamburger toggled={isOpen} toggle={setIsOpen} color='#6466f1' size={24} />
       <AnimatePresence>
         {isOpen && (
           <motion.div variants={menuVariants} initial='initial' animate='animate' exit='exit' className='fixed inset-0 h-screen'>
-            <motion.div className='dark:from-dark-bg-tertiary from-light-bg-secondary to-light-bg-secondary dark:to-dark-bg-tertiary absolute inset-0 bg-gradient-to-b via-[#eaeffd]/95 dark:via-[#212244]/95' />
+            <motion.div className='absolute inset-0 bg-gradient-to-b from-light-bg-secondary via-[#eaeffd]/95 to-light-bg-secondary dark:from-dark-bg-tertiary dark:via-[#212244]/95 dark:to-dark-bg-tertiary' />
             <motion.div variants={containerVariants} className='relative flex h-full flex-col items-start justify-start gap-12 p-6 pt-20'>
               <ul className='grid gap-4'>
                 {menuItems.map((item) => (
@@ -55,16 +56,13 @@ const MenuMobile = () => {
                       setIsOpen(false);
                       scrollToSection(item.id);
                     }}
-                    className='flex gap-2 font-mono'
+                    className='flex gap-2'
                   >
-                    <span className='text-accent-primary font-mono'>❯</span>
-                    <span className='text-light-text-secondary dark:text-dark-text-primary/95 text-xl'>{item.label}</span>
+                    <span className='text-xl text-light-text-secondary dark:text-dark-text-primary/95'>{item.label}</span>
                   </motion.li>
                 ))}
               </ul>
-              <motion.div variants={itemVariants} className='scale-125'>
-                <ModeSwitch />
-              </motion.div>
+              <motion.div variants={itemVariants} className='scale-125'></motion.div>
             </motion.div>
           </motion.div>
         )}

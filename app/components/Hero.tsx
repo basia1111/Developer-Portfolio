@@ -46,13 +46,13 @@ const Hero = () => {
   return (
     <div
       id='home'
-      className='from-dark-bg-tertiary via-dark-bg-tertiary relative flex min-h-screen items-center justify-center to-transparent dark:bg-gradient-to-b'
+      className='relative flex min-h-screen items-center justify-center from-dark-bg-tertiary via-dark-bg-tertiary to-transparent dark:bg-gradient-to-b'
     >
       <div className='hidden dark:block'>
         {stars.map((star) => (
           <div
             key={star.id}
-            className='animate-twinkle-1 absolute inline-flex rounded-full bg-white/90'
+            className='absolute inline-flex animate-twinkle-1 rounded-full bg-white/90'
             style={{
               top: star.top,
               left: star.left,
@@ -68,36 +68,36 @@ const Hero = () => {
           <div className='space-y-10'>
             <div className='space-y-6'>
               <div className='flex flex-col items-start gap-2'>
-                <div className='hover:border-accent-primary/30 hover:shadow-accent-primary/5 border-accent-primary/20 bg-light-bg-secondary inline-flex items-center justify-start gap-2 rounded-xl border px-4 py-2 text-sm backdrop-blur-sm dark:bg-gray-950/40'>
-                  <span className='text-accent-light font-mono'>❯</span>
+                <div className='inline-flex items-center justify-start gap-2 rounded-xl border border-accent-primary/20 bg-light-bg-secondary px-4 py-2 text-sm backdrop-blur-sm hover:border-accent-primary/30 hover:shadow-accent-primary/5 dark:bg-gray-950/40'>
+                  <span className='font-mono text-accent-light'>❯</span>
                   <Greeting />
                 </div>
-                <h1 className='text-light-text-primary dark:text-dark-text-primary relative overflow-hidden text-3xl font-bold tracking-tight md:text-6xl lg:text-7xl'>
+                <h1 className='relative overflow-hidden text-3xl font-bold tracking-tight text-light-text-primary md:text-6xl lg:text-7xl dark:text-dark-text-primary'>
                   <motion.span
                     initial='initial'
                     animate='animate'
                     variants={blockVariants}
-                    className='dark:bg-accent-primary bg-accent-light absolute z-10 h-full w-full'
+                    className='absolute z-10 h-full w-full bg-accent-light dark:bg-accent-primary'
                   />{' '}
                   I'm Basia
                 </h1>
-                <p className='text-light-text-secondary dark:text-dark-text-secondary relative overflow-hidden text-lg md:text-2xl'>
+                <p className='relative overflow-hidden text-lg text-light-text-secondary md:text-2xl dark:text-dark-text-secondary'>
                   <motion.span
                     initial='initial'
                     animate='animate'
                     variants={blockVariants}
-                    className='dark:bg-accent-primary bg-accent-light absolute z-10 h-full w-full'
+                    className='absolute z-10 h-full w-full bg-accent-light dark:bg-accent-primary'
                   />
                   Full Stack Developer
                 </p>
               </div>
 
-              <p className='text-light-text-secondary dark:text-dark-text-secondary relative max-w-xl overflow-hidden text-sm md:text-lg'>
+              <p className='relative max-w-xl overflow-hidden text-sm text-light-text-secondary md:text-lg dark:text-dark-text-secondary'>
                 <motion.span
                   initial='initial'
                   animate='animate'
                   variants={blockVariants}
-                  className='dark:bg-accent-primary bg-accent-light absolute h-full w-full'
+                  className='absolute h-full w-full bg-accent-light dark:bg-accent-primary'
                 />
                 Passionate about crafting efficient web solutions and eager to grow as a developer. Currently expanding my React skills while seeking
                 opportunities to contribute to meaningful projects in a professional environment.
@@ -105,7 +105,7 @@ const Hero = () => {
             </div>
 
             <div className='space-y-3'>
-              <div className='text-accent-light font-mono text-sm'>❯ current-status</div>
+              <div className='font-mono text-sm text-accent-light'>❯ current-status</div>
               <div className='flex flex-wrap gap-3'>
                 {[
                   { icon: <Code2 className='h-4 w-4' />, text: 'Frontend Focus' },
@@ -114,10 +114,10 @@ const Hero = () => {
                 ].map((item, index) => (
                   <div
                     key={index}
-                    className='hover:border-accent-primary/30 hover:shadow-accent-primary/5 border-accent-primary/20 bg-light-bg-secondary inline-flex items-center gap-2 rounded-xl border px-4 py-2 backdrop-blur-sm transition-all hover:scale-105 dark:bg-gray-950/40'
+                    className='inline-flex items-center gap-2 rounded-xl border border-accent-primary/20 bg-light-bg-secondary px-4 py-2 backdrop-blur-sm transition-all hover:scale-105 hover:border-accent-primary/30 hover:shadow-accent-primary/5 dark:bg-gray-950/40'
                   >
                     <div className='text-accent-primary dark:text-accent-light'>{item.icon}</div>
-                    <span className='text-light-text-primary dark:text-dark-text-primary text-sm'>{item.text}</span>
+                    <span className='text-sm text-light-text-primary dark:text-dark-text-primary'>{item.text}</span>
                   </div>
                 ))}
               </div>
@@ -126,26 +126,26 @@ const Hero = () => {
             <div className='flex items-center gap-6'>
               <a
                 href='#projects'
-                className='bg-accent-primary/90 text-dark-text-primary hover:bg-accent-dark rounded-xl px-8 py-3 text-sm font-medium backdrop-blur-sm transition-all hover:scale-105'
+                className='rounded-xl bg-accent-primary/90 px-8 py-3 text-sm font-medium text-dark-text-primary backdrop-blur-sm transition-all hover:scale-105 hover:bg-accent-dark'
               >
                 See My Projects
               </a>
               <div className='flex items-center gap-6'>
                 <a
                   href='https://github.com/basia1111'
-                  className='dark:text-dark-text-secondary text-light-text-secondary hover:text-accent-primary transition-all hover:scale-110'
+                  className='text-light-text-secondary transition-all hover:scale-110 hover:text-accent-primary dark:text-dark-text-secondary'
                 >
                   <Github className='h-6 w-6' />
                 </a>
                 <a
                   href='https://linkedin.com'
-                  className='dark:text-dark-text-secondary text-light-text-secondary hover:text-accent-primary transition-all hover:scale-110'
+                  className='text-light-text-secondary transition-all hover:scale-110 hover:text-accent-primary dark:text-dark-text-secondary'
                 >
                   <Linkedin className='h-6 w-6' />
                 </a>
                 <a
                   href='mailto:email'
-                  className='dark:text-dark-text-secondary text-light-text-secondary hover:text-accent-primary transition-all hover:scale-110'
+                  className='text-light-text-secondary transition-all hover:scale-110 hover:text-accent-primary dark:text-dark-text-secondary'
                 >
                   <Mail className='h-6 w-6' />
                 </a>
@@ -155,6 +155,7 @@ const Hero = () => {
 
           <div className='relative mx-auto mt-10 h-[300px] w-full max-w-md md:h-[450px]'>
             <MorphingBlobs />
+            <div className='absolute left-1/2 top-1/2 z-10 mt-[30px] h-[120px] w-[120px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-indigo-900/50 blur-xl md:h-[260px] md:w-[260px]' />
             <img
               src='/my-photo.png'
               alt='Basia'

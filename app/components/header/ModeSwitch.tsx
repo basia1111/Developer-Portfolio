@@ -40,14 +40,14 @@ const ModeSwitch = () => {
   ];
 
   return (
-    <div className='dark:bg-dark-bg-tertiary/50 bg-light-bg-primary gap-0.5 rounded-full p-0.5 file:flex'>
+    <div className='gap-0.5 rounded-full bg-light-bg-primary p-0.5 file:flex dark:bg-dark-bg-tertiary/50'>
       {modes.map(({ name, icon: Icon }) => (
         <button
           key={name}
-          className={`rounded-full p-1.5 transition-colors ${activeMode === name ? 'text-accent-primary' : 'text-light-text-muted dark:hover:text-dark-text-secondary/70 dark:text-dark-text-secondary hover:text-light-text-muted/70'}`}
+          className={`rounded-full p-1.5 transition-colors ${activeMode === name ? 'text-accent-primary' : 'text-light-text-muted hover:text-light-text-muted/70 dark:text-dark-text-secondary dark:hover:text-dark-text-secondary/70'}`}
           onClick={() => setMode(name as 'light' | 'dark' | 'system')}
         >
-          <Icon size={14} />
+          <Icon className='size-4' />
         </button>
       ))}
     </div>
