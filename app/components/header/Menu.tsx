@@ -26,7 +26,6 @@ const Menu = () => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           setActiveSection(entry.target.id);
-          console.log(entry);
         }
       });
     };
@@ -44,6 +43,7 @@ const Menu = () => {
       <ul className='flex items-center gap-12 sm:flex'>
         {menuItems.map((item) => (
           <li
+            key={item.id}
             onClick={() => scrollToSection(item.id)}
             className={`rounded-md px-2 py-1 text-sm tracking-wide transition-all ${item.id == activeSection ? 'bg-accent-primary dark:text-dark-bg-hover text-white dark:bg-white' : 'text-light-text-secondary dark:text-dark-text-secondary'} ${item.id !== activeSection ? 'hover:text-accent-primary' : null}`}
           >

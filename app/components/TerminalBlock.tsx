@@ -87,8 +87,9 @@ const TerminalBlock = ({ index, line, onComplete }: TerminalBlockProps) => {
               {line.section.title}
             </motion.span>
             {line.section.content &&
-              line.section.content.split('\n').map((l) => (
+              line.section.content.split('\n').map((l, i) => (
                 <motion.span
+                  key={i}
                   variants={typingVariants}
                   className='text-light-text-secondary dark:text-dark-text-secondary whitespace-pre-line text-xs md:text-sm'
                 >

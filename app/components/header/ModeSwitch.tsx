@@ -16,7 +16,6 @@ const ModeSwitch = () => {
       localStorage.removeItem('mode');
       document.documentElement.classList.toggle('dark', window.matchMedia('(prefers-color-scheme: dark)').matches);
     }
-    console.log(window.matchMedia('(prefers-color-scheme: dark)').matches);
   };
 
   useEffect(() => {
@@ -32,7 +31,6 @@ const ModeSwitch = () => {
       localStorage.mode === 'dark' ? setActiveMode('dark') : setActiveMode('light');
     }
     setIsLoading(false);
-    console.log('false');
   }, []);
 
   const modes = [
