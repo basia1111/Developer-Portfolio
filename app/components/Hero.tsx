@@ -44,7 +44,10 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className='from-dark-bg-tertiary via-dark-bg-tertiary relative flex min-h-screen items-center justify-center to-transparent dark:bg-gradient-to-b'>
+    <div
+      id='home'
+      className='from-dark-bg-tertiary via-dark-bg-tertiary relative flex min-h-screen items-center justify-center to-transparent dark:bg-gradient-to-b'
+    >
       <div className='hidden dark:block'>
         {stars.map((star) => (
           <div
@@ -121,9 +124,12 @@ const Hero = () => {
             </div>
 
             <div className='flex items-center gap-6'>
-              <button className='bg-accent-primary/90 text-dark-text-primary hover:bg-accent-dark rounded-xl px-8 py-3 text-sm font-medium backdrop-blur-sm transition-all hover:scale-105'>
+              <a
+                href='#projects'
+                className='bg-accent-primary/90 text-dark-text-primary hover:bg-accent-dark rounded-xl px-8 py-3 text-sm font-medium backdrop-blur-sm transition-all hover:scale-105'
+              >
                 See My Projects
-              </button>
+              </a>
               <div className='flex items-center gap-6'>
                 <a
                   href='https://github.com/basia1111'

@@ -34,7 +34,7 @@ const ProjectsSection = () => {
     },
   ];
   return (
-    <section className='relative py-6 md:py-16'>
+    <section id='projects' className='relative py-6 md:py-16'>
       <div className='mx-auto max-w-7xl px-4 md:px-6'>
         <h2 className='mb-8 text-center md:mb-16'>
           <span className='text-accent-primary dark:text-accent-light font-mono text-sm'>❯ Recent work </span>

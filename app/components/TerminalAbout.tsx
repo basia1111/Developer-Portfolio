@@ -8,7 +8,7 @@ import TerminalBlock from './TerminalBlock';
 const TerminalAbout = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   return (
-    <div className='mx-auto max-w-7xl px-4 md:px-6'>
+    <div id='about' className='mx-auto max-w-7xl px-4 md:px-6'>
       <div className='group relative'>
         <div className='border-accent-primary/20 bg-light-bg-secondary dark:hover:shadow-accent-light/5 rounded-xl border shadow-lg transition-all duration-300 dark:bg-gray-950/50'>
           <div className='border-accent-primary/20 bg-light-bg-secondary flex items-center justify-between rounded-t-xl border-b px-4 py-3 dark:bg-gray-950/80'>

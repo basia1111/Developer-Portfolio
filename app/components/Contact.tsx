@@ -3,7 +3,7 @@ import { Mail, Github, Linkedin, ArrowRight } from 'lucide-react';
 
 const ContactSection = () => {
   return (
-    <section className='py-24'>
+    <section id='contact' className='py-24'>
       <div className='mx-auto max-w-7xl px-4 md:px-6'>
         <div>
           <span className='text-accent-primary dark:text-accent-light font-mono text-sm'>→ Contact</span>

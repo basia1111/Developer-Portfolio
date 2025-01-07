@@ -66,7 +66,7 @@ const SkillsSection = () => {
   ];
 
   return (
-    <section className='mx-auto max-w-7xl px-4 py-12 md:px-6 md:py-24'>
+    <section id='skills' className='mx-auto max-w-7xl px-4 py-12 md:px-6 md:py-24'>
       <div className='text-center'>
         <span className='text-accent-primary dark:text-accent-light font-mono text-sm'>❯ My Tech Stack</span>
         <h2 className='text-light-text-primary dark:text-dark-text-primary mt-4 text-2xl font-bold md:text-4xl'>Technical Skills</h2>
