@@ -76,3 +76,10 @@ body {
     top: 50%;
   }
 }
+.hamburger-react {
+  color: black;
+  z-index: 50;
+}
+html.dark .hamburger-react {
+  color: white !important;
+}
