@@ -18,7 +18,7 @@ const SmoothMorphingBlobs = () => {
   };
 
   return (
-    <div className='relative z-10 flex w-full items-center justify-center'>
+    <div className='relative z-10 flex w-full items-center justify-center opacity-70 dark:opacity-100'>
       <svg xmlns='http://www.w3.org/2000/svg' viewBox='-100 -100 200 200' width='100%' className='h-[300px] md:h-[500px]'>
         <defs>
           <linearGradient id='blob-gradient' x1='0%' y1='0%' x2='100%' y2='100%'>

@@ -16,7 +16,7 @@ interface TerminalBlockProps {
 }
 const TerminalBlock = ({ index, line, onComplete }: TerminalBlockProps) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '100px' });
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
   const [isCommandComplete, setIsCommandComplete] = useState(false);
 
   const lineVariants = {

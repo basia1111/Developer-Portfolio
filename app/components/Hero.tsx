@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { Github, Linkedin, Mail, Code2, Sparkles, Brain } from 'lucide-react';
-import Greeting from './greeting';
+import Greeting from './Greeting';
 import MorphingBlobs from './MorphingBolbs';
 import { motion } from 'framer-motion';
 
@@ -25,6 +25,7 @@ const Hero = () => {
       transition: {
         duration: 1,
         ease: [0.43, 0.13, 0.23, 0.96],
+        delay: 0.45,
       },
     },
   };
@@ -69,17 +70,32 @@ const Hero = () => {
                   <Greeting />
                 </div>
                 <h1 className='text-light-text-primary dark:text-dark-text-primary relative overflow-hidden text-3xl font-bold tracking-tight md:text-6xl lg:text-7xl'>
-                  <motion.span initial='initial' animate='animate' variants={blockVariants} className='bg-accent-primary absolute z-10 h-full w-full' /> I'm
-                  Basia
+                  <motion.span
+                    initial='initial'
+                    animate='animate'
+                    variants={blockVariants}
+                    className='dark:bg-accent-primary bg-accent-light absolute z-10 h-full w-full'
+                  />{' '}
+                  I'm Basia
                 </h1>
                 <p className='text-light-text-secondary dark:text-dark-text-secondary relative overflow-hidden text-lg md:text-2xl'>
-                  <motion.span initial='initial' animate='animate' variants={blockVariants} className='bg-accent-primary absolute z-10 h-full w-full' />
+                  <motion.span
+                    initial='initial'
+                    animate='animate'
+                    variants={blockVariants}
+                    className='dark:bg-accent-primary bg-accent-light absolute z-10 h-full w-full'
+                  />
                   Full Stack Developer
                 </p>
               </div>
 
               <p className='text-light-text-secondary dark:text-dark-text-secondary relative max-w-xl overflow-hidden text-sm md:text-lg'>
-                <motion.span initial='initial' animate='animate' variants={blockVariants} className='bg-accent-primary absolute h-full w-full' />
+                <motion.span
+                  initial='initial'
+                  animate='animate'
+                  variants={blockVariants}
+                  className='dark:bg-accent-primary bg-accent-light absolute h-full w-full'
+                />
                 Passionate about crafting efficient web solutions and eager to grow as a developer. Currently expanding my React skills while seeking
                 opportunities to contribute to meaningful projects in a professional environment.
               </p>

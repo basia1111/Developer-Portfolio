@@ -1,9 +1,11 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Sun, Moon, Monitor } from 'lucide-react';
+import { LoadingContext } from '@/app/contexts/LoadingContext';
 
 const ModeSwitch = () => {
+  const { setIsLoading } = useContext(LoadingContext);
   const [activeMode, setActiveMode] = useState<'light' | 'dark' | 'system'>();
   const setMode = (mode: 'light' | 'dark' | 'system') => {
     setActiveMode(mode);
@@ -18,16 +20,19 @@ const ModeSwitch = () => {
   };
 
   useEffect(() => {
+    setIsLoading(true);
     const isSetMode = 'mode' in localStorage;
     document.documentElement.classList.toggle(
       'dark',
       localStorage.mode === 'dark' || (!isSetMode && window.matchMedia('(prefers-color-scheme: dark)').matches),
     );
     if (!isSetMode) {
-      setActiveMode('system');
+      setActiveMode('dark');
     } else {
       localStorage.mode === 'dark' ? setActiveMode('dark') : setActiveMode('light');
     }
+    setIsLoading(false);
+    console.log('false');
   }, []);
 
   const modes = [
@@ -37,7 +42,7 @@ const ModeSwitch = () => {
   ];
 
   return (
-    <div className='dark:bg-dark-bg-tertiary/50 bg-light-bg-tertiary gap-0.5 rounded-full p-0.5 file:flex'>
+    <div className='dark:bg-dark-bg-tertiary/50 bg-light-bg-primary gap-0.5 rounded-full p-0.5 file:flex'>
       {modes.map(({ name, icon: Icon }) => (
         <button
           key={name}
