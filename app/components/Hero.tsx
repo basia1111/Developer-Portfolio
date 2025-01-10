@@ -138,13 +138,13 @@ const Hero = () => {
                   <Github className='h-6 w-6' />
                 </a>
                 <a
-                  href='https://linkedin.com'
+                  href='https://www.linkedin.com/in/barbara-%C5%BCygilewicz-905635332/'
                   className='text-light-text-secondary transition-all hover:scale-110 hover:text-accent-primary dark:text-dark-text-secondary'
                 >
                   <Linkedin className='h-6 w-6' />
                 </a>
                 <a
-                  href='mailto:email'
+                  href='mailto:basia.zygilewicz@gmail.com'
                   className='text-light-text-secondary transition-all hover:scale-110 hover:text-accent-primary dark:text-dark-text-secondary'
                 >
                   <Mail className='h-6 w-6' />
