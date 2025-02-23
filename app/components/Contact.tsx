@@ -1,78 +1,76 @@
 import React from 'react';
-import { Mail, Github, Linkedin, ArrowRight } from 'lucide-react';
+import { Mail, Github, Linkedin } from 'lucide-react';
 
 const ContactSection = () => {
+  const contactLinks = [
+    {
+      href: 'mailto:basia.zygilewicz@gmail.com',
+      icon: <Mail className='h-5 w-5' />,
+      text: 'basia.zygilewicz@gmail.com',
+    },
+    {
+      href: 'https://github.com/basia1111',
+      icon: <Github className='h-5 w-5' />,
+      text: 'github.com/basia1111',
+    },
+    {
+      href: 'https://www.linkedin.com/in/barbara-%C5%BCygilewicz-905635332/',
+      icon: <Linkedin className='h-5 w-5' />,
+      text: 'Connect with me',
+    },
+  ];
+
   return (
-    <section id='contact' className='py-24'>
+    <section id='contact' className='py-12 md:py-24'>
       <div className='mx-auto max-w-7xl px-4 md:px-6'>
-        <div>
-          <span className='text-accent-primary dark:text-accent-light font-mono text-sm'>→ Contact</span>
-          <h2 className='text-light-text-primary dark:text-dark-text-primary mb-8 mt-4 text-2xl font-bold md:text-4xl'>Get in Touch</h2>
+        <div className='mb-12 text-center'>
+          <span className='inline-flex items-center justify-center gap-2 font-mono text-sm text-accent-primary dark:text-accent-light'>
+            <span className='h-px w-8 bg-accent-primary/20 dark:bg-accent-light/20'></span>❯ Contact
+            <span className='h-px w-8 bg-accent-primary/20 dark:bg-accent-light/20'></span>
+          </span>
+          <h2 className='mt-4 text-2xl font-bold text-light-text-primary md:text-4xl dark:text-dark-text-primary'>Get in Touch</h2>
         </div>
 
-        <div className='space-y-4 font-mono'>
-          <div className='text-accent-primary dark:text-accent-light text-sm'>❯ contact--details</div>
-
-          <div className='grid gap-6 lg:grid-cols-2'>
+        <div className='grid gap-12 lg:grid-cols-[1fr,1.5fr]'>
+          <div className='space-y-6'>
+            <div className='font-mono text-sm text-accent-primary dark:text-accent-light'>❯ contact--info</div>
             <div className='space-y-4'>
-              <a href='mailto:basia.zygilewicz@gmail.com' className='group block'>
-                <div className='hover:border-accent-primary/30 hover:shadow-accent-primary/5 border-accent-primary/20 bg-light-bg-secondary dark:hover:shadow-accent-light/5 rounded-xl border p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:bg-gray-950/40'>
-                  <div className='flex items-center justify-between'>
-                    <div className='flex items-center gap-4'>
-                      <div className='bg-accent-primary/10 rounded-lg p-2'>
-                        <Mail className='text-accent-primary dark:text-accent-light h-5 w-5' />
-                      </div>
-                      <div>
-                        <p className='text-light-text-muted dark:text-dark-text-secondary text-sm'>basia.zygilewicz@gmail.com</p>
-                      </div>
+              {contactLinks.map((link, index) => (
+                <a
+                  key={index}
+                  href={link.href}
+                  target={link.href.startsWith('mailto') ? undefined : '_blank'}
+                  rel={link.href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
+                  className='group block'
+                >
+                  <div className='flex items-center gap-4 rounded-xl border border-accent-primary/20 bg-white p-4 transition-colors hover:border-accent-primary/30 dark:bg-dark-bg-secondary'>
+                    <div className='flex h-10 w-10 items-center justify-center rounded-lg bg-accent-primary/10 text-accent-primary dark:text-accent-light'>
+                      {link.icon}
                     </div>
-                    <ArrowRight className='h-4 w-4 -translate-x-2 text-gray-600 opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100' />
+                    <span className='text-sm text-light-text-muted group-hover:text-accent-primary dark:text-dark-text-secondary dark:group-hover:text-accent-light'>
+                      {link.text}
+                    </span>
                   </div>
-                </div>
-              </a>
-
-              <a href='https://github.com/basia1111' target='_blank' rel='noopener noreferrer' className='group block'>
-                <div className='hover:border-accent-primary/30 hover:shadow-accent-primary/5 border-accent-primary/20 bg-light-bg-secondary dark:hover:shadow-accent-light/5 rounded-xl border p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:bg-gray-950/40'>
-                  <div className='flex items-center justify-between'>
-                    <div className='flex items-center gap-4'>
-                      <div className='bg-accent-primary/10 rounded-lg p-2'>
-                        <Github className='text-accent-primary dark:text-accent-light h-5 w-5' />
-                      </div>
-                      <div>
-                        <p className='text-light-text-muted dark:text-dark-text-secondary text-sm'>github.com/basia1111</p>
-                      </div>
-                    </div>
-                    <ArrowRight className='h-4 w-4 -translate-x-2 text-gray-600 opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100' />
-                  </div>
-                </div>
-              </a>
-
-              <a href='https://www.linkedin.com/in/barbara-%C5%BCygilewicz-905635332/' target='_blank' rel='noopener noreferrer' className='group block'>
-                <div className='hover:border-accent-primary/30 hover:shadow-accent-primary/5 border-accent-primary/20 bg-light-bg-secondary dark:hover:shadow-accent-light/5 rounded-xl border p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:bg-gray-950/40'>
-                  <div className='flex items-center justify-between'>
-                    <div className='flex items-center gap-4'>
-                      <div className='bg-accent-primary/10 rounded-lg p-2'>
-                        <Linkedin className='text-accent-primary dark:text-accent-light h-5 w-5' />
-                      </div>
-                      <div>
-                        <p className='text-light-text-muted dark:text-dark-text-secondary text-sm'>Connect with me</p>
-                      </div>
-                    </div>
-                    <ArrowRight className='h-4 w-4 -translate-x-2 text-gray-600 opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100' />
-                  </div>
-                </div>
-              </a>
+                </a>
+              ))}
             </div>
+          </div>
 
-            <div className='text-light-text-muted dark:text-dark-text-secondary space-y-6'>
+          <div className='relative'>
+            <div className='mb-6 font-mono text-sm text-accent-primary dark:text-accent-light'>❯ message</div>
+            <div className='space-y-6 rounded-xl border border-accent-primary/20 bg-white p-6 dark:bg-dark-bg-secondary'>
               <div className='space-y-2'>
-                <span className='text-accent-primary'>- Looking Forward</span>
-                <p className='text-sm'>Whether you have a project in mind or just want to chat, I'm always open to discussing new opportunities and ideas.</p>
+                <span className='text-sm font-medium text-accent-primary dark:text-accent-light'>→ Looking Forward</span>
+                <p className='text-sm leading-relaxed text-light-text-muted dark:text-dark-text-secondary'>
+                  Whether you have a project in mind or just want to chat, I'm always open to discussing new opportunities and ideas.
+                </p>
               </div>
 
               <div className='space-y-2'>
-                <span className='text-accent-primary'>- Contact Methods</span>
-                <p className='text-sm'>Feel free to reach out through any of the platforms listed. I'm most responsive via email and LinkedIn.</p>
+                <span className='text-sm font-medium text-accent-primary dark:text-accent-light'>→ Contact Methods</span>
+                <p className='text-sm leading-relaxed text-light-text-muted dark:text-dark-text-secondary'>
+                  Feel free to reach out through any of the platforms listed. I'm most responsive via email and LinkedIn.
+                </p>
               </div>
             </div>
           </div>

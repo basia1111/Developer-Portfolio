@@ -14,7 +14,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang='en'>
       <LoadingContext.Provider value={{ isLoading, setIsLoading }}>
-        <body className='bg-light-bg-secondary dark:bg-dark-bg-secondary relative'>
+        <body className='relative bg-light-bg-secondary dark:bg-dark-bg-secondary'>
           <Header />
           {children}
           <Footer />
@@ -28,7 +28,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   y: '-100%',
                   transition: { duration: 0.4, ease: 'easeOut' },
                 }}
-                className='bg-dark-bg-tertiary fixed inset-0 z-50 flex items-center justify-center'
+                className='fixed inset-0 z-50 flex items-center justify-center bg-light-bg-tertiary dark:bg-dark-bg-tertiary'
               >
                 <motion.div
                   initial={{ opacity: 1 }}

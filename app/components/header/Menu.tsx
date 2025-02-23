@@ -7,6 +7,7 @@ export const menuItems = [
   { id: 'projects', label: 'Projects' },
   { id: 'contact', label: 'Contact' },
 ];
+
 export const scrollToSection = (sectionId: string) => {
   document.getElementById(sectionId)?.scrollIntoView({
     behavior: 'smooth',
@@ -22,6 +23,7 @@ const Menu = () => {
       rootMargin: '0px -30% 0px -10%',
       threshold: 0.4,
     };
+
     const callback = (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -37,17 +39,24 @@ const Menu = () => {
     });
 
     return () => observer.disconnect();
-  });
+  }, []);
+
   return (
-    <nav className='hidden sm:flex'>
-      <ul className='flex items-center gap-12 sm:flex'>
+    <nav className='hidden sm:block'>
+      <ul className='flex items-center gap-8'>
         {menuItems.map((item) => (
-          <li
-            key={item.id}
-            onClick={() => scrollToSection(item.id)}
-            className={`rounded-md px-2 py-1 text-[16px] tracking-wide transition-all ${item.id == activeSection ? 'bg-accent-primary text-white dark:bg-white dark:text-dark-bg-hover' : 'text-light-text-secondary dark:text-dark-text-secondary'} ${item.id !== activeSection ? 'hover:text-accent-primary' : null}`}
-          >
-            {item.label}
+          <li key={item.id} onClick={() => scrollToSection(item.id)} className='relative cursor-pointer font-mono text-sm'>
+            <div
+              className={`flex items-center gap-2 px-2 py-1 transition-colors ${
+                item.id === activeSection
+                  ? 'text-accent-primary dark:text-accent-light'
+                  : 'text-light-text-secondary hover:text-accent-primary dark:text-dark-text-secondary dark:hover:text-accent-light'
+              }`}
+            >
+              <span className={`${item.id === activeSection ? 'opacity-100' : 'opacity-0'}`}>❯</span>
+              {item.label}
+            </div>
+            {item.id === activeSection && <div className='absolute bottom-0 left-0 h-px w-full bg-accent-primary dark:bg-accent-light' />}
           </li>
         ))}
       </ul>

@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { ArchiveRestore, Terminal } from 'lucide-react';
+import { Terminal } from 'lucide-react';
 import { terminalLines } from '../../terminalLines';
 import TerminalBlock from './TerminalBlock';
 
@@ -10,16 +10,16 @@ const TerminalAbout = () => {
   return (
     <div id='about' className='mx-auto max-w-7xl px-4 md:px-6'>
       <div className='group relative'>
-        <div className='border-accent-primary/20 bg-light-bg-secondary dark:hover:shadow-accent-light/5 rounded-xl border shadow-lg transition-all duration-300 dark:bg-gray-950/50'>
-          <div className='border-accent-primary/20 bg-light-bg-secondary flex items-center justify-between rounded-t-xl border-b px-4 py-3 dark:bg-gray-950/80'>
+        <div className='rounded-xl border border-accent-primary/20 bg-white shadow-lg transition-all duration-300 dark:bg-dark-bg-secondary'>
+          <div className='flex items-center justify-between rounded-t-xl border-b border-accent-primary/20 bg-light-bg-tertiary px-4 py-3 dark:bg-dark-bg-tertiary'>
             <div className='flex items-center gap-2'>
-              <Terminal className='h-5 w-5 text-emerald-400' />
-              <span className='text-light-text-primary dark:text-dark-text-primary text-sm font-medium'>basia@portfolio: ~/about-me</span>
+              <Terminal className='h-5 w-5 text-accent-light' />
+              <span className='text-sm font-medium text-light-text-primary dark:text-dark-text-primary'>basia@portfolio: ~/about-me</span>
             </div>
             <div className='flex items-center gap-2'>
-              <div className='h-3 w-3 rounded-full bg-pink-500' />
-              <div className='h-3 w-3 rounded-full bg-yellow-500' />
-              <div className='h-3 w-3 rounded-full bg-emerald-400' />
+              <div className='h-3 w-3 rounded-full bg-accent-primary' />
+              <div className='h-3 w-3 rounded-full bg-accent-light' />
+              <div className='h-3 w-3 rounded-full bg-accent-primary' />
             </div>
           </div>
           <div className='space-y-6 p-3 font-mono text-base leading-relaxed md:p-6'>

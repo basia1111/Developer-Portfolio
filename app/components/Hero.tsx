@@ -6,20 +6,9 @@ import Greeting from './Greeting';
 import MorphingBlobs from './MorphingBolbs';
 import { motion } from 'framer-motion';
 
-interface Star {
-  id: number;
-  top: string;
-  left: string;
-  animationDelay: string;
-  size: number;
-}
-
 const Hero = () => {
-  const [stars, setStars] = useState<Star[]>([]);
   const blockVariants = {
-    initial: {
-      left: 0,
-    },
+    initial: { left: 0 },
     animate: {
       left: '100%',
       transition: {
@@ -29,47 +18,16 @@ const Hero = () => {
       },
     },
   };
-  useEffect(() => {
-    const generateStars = (): Star[] => {
-      return Array.from({ length: 50 }, (_, i) => ({
-        id: i,
-        top: `${Math.random() * 100}%`,
-        left: `${Math.random() * 100}%`,
-        animationDelay: `${Math.random() * 5}s`,
-        size: Math.random() * 2 + 1,
-      }));
-    };
-
-    setStars(generateStars());
-  }, []);
 
   return (
-    <div
-      id='home'
-      className='relative flex min-h-screen items-center justify-center from-dark-bg-tertiary via-dark-bg-tertiary to-transparent dark:bg-gradient-to-b'
-    >
-      <div className='hidden dark:block'>
-        {stars.map((star) => (
-          <div
-            key={star.id}
-            className='absolute inline-flex animate-twinkle-1 rounded-full bg-white/90'
-            style={{
-              top: star.top,
-              left: star.left,
-              width: `${star.size}px`,
-              height: `${star.size}px`,
-              animationDelay: star.animationDelay,
-            }}
-          />
-        ))}
-      </div>
+    <div id='home' className='relative flex min-h-screen items-center justify-center'>
       <div className='mx-auto max-w-7xl px-4 pb-4 pt-20 md:px-6 md:py-20'>
         <div className='grid items-center md:grid-cols-[6fr,4fr]'>
           <div className='space-y-10'>
             <div className='space-y-6'>
               <div className='flex flex-col items-start gap-2'>
-                <div className='inline-flex items-center justify-start gap-2 rounded-xl border border-accent-primary/20 bg-light-bg-secondary px-4 py-2 text-sm backdrop-blur-sm hover:border-accent-primary/30 hover:shadow-accent-primary/5 dark:bg-gray-950/40'>
-                  <span className='font-mono text-accent-light'>❯</span>
+                <div className='inline-flex items-center justify-start gap-2 rounded-xl border border-accent-primary/20 bg-white px-4 py-2 text-sm backdrop-blur-sm dark:bg-dark-bg-primary'>
+                  <span className='font-mono text-accent-primary dark:text-accent-light'>❯</span>
                   <Greeting />
                 </div>
                 <h1 className='relative overflow-hidden text-3xl font-bold tracking-tight text-light-text-primary md:text-6xl lg:text-7xl dark:text-dark-text-primary'>
@@ -77,8 +35,8 @@ const Hero = () => {
                     initial='initial'
                     animate='animate'
                     variants={blockVariants}
-                    className='absolute z-10 h-full w-full bg-accent-light dark:bg-accent-primary'
-                  />{' '}
+                    className='absolute z-10 h-full w-full bg-white dark:bg-accent-primary'
+                  />
                   I'm Basia
                 </h1>
                 <p className='relative overflow-hidden text-lg text-light-text-secondary md:text-2xl dark:text-dark-text-secondary'>
@@ -86,26 +44,21 @@ const Hero = () => {
                     initial='initial'
                     animate='animate'
                     variants={blockVariants}
-                    className='absolute z-10 h-full w-full bg-accent-light dark:bg-accent-primary'
+                    className='absolute z-10 h-full w-full bg-white dark:bg-accent-primary'
                   />
                   Full Stack Developer
                 </p>
               </div>
 
               <p className='relative max-w-xl overflow-hidden text-sm text-light-text-secondary md:text-lg dark:text-dark-text-secondary'>
-                <motion.span
-                  initial='initial'
-                  animate='animate'
-                  variants={blockVariants}
-                  className='absolute h-full w-full bg-accent-light dark:bg-accent-primary'
-                />
+                <motion.span initial='initial' animate='animate' variants={blockVariants} className='absolute h-full w-full bg-white dark:bg-accent-primary' />
                 Passionate about crafting efficient web solutions and eager to grow as a developer. Currently expanding my React skills while seeking
                 opportunities to contribute to meaningful projects in a professional environment.
               </p>
             </div>
 
             <div className='space-y-3'>
-              <div className='font-mono text-sm text-accent-light'>❯ current-status</div>
+              <div className='font-mono text-sm text-accent-primary dark:text-accent-light'>❯ current-status</div>
               <div className='flex flex-wrap gap-3'>
                 {[
                   { icon: <Code2 className='h-4 w-4' />, text: 'Frontend Focus' },
@@ -114,7 +67,7 @@ const Hero = () => {
                 ].map((item, index) => (
                   <div
                     key={index}
-                    className='inline-flex items-center gap-2 rounded-xl border border-accent-primary/20 bg-light-bg-secondary px-4 py-2 backdrop-blur-sm transition-all hover:scale-105 hover:border-accent-primary/30 hover:shadow-accent-primary/5 dark:bg-gray-950/40'
+                    className='inline-flex items-center gap-2 rounded-xl border border-accent-primary/20 bg-white px-4 py-2 backdrop-blur-sm dark:bg-dark-bg-secondary'
                   >
                     <div className='text-accent-primary dark:text-accent-light'>{item.icon}</div>
                     <span className='text-sm text-light-text-primary dark:text-dark-text-primary'>{item.text}</span>
@@ -126,36 +79,31 @@ const Hero = () => {
             <div className='flex items-center gap-6'>
               <a
                 href='#projects'
-                className='rounded-xl bg-accent-primary/90 px-8 py-3 text-sm font-medium text-dark-text-primary backdrop-blur-sm transition-all hover:scale-105 hover:bg-accent-dark'
+                className='rounded-xl bg-accent-primary/90 px-8 py-3 text-sm font-medium text-light-bg-primary backdrop-blur-sm transition-all hover:bg-accent-dark dark:text-dark-text-primary'
               >
                 See My Projects
               </a>
               <div className='flex items-center gap-6'>
-                <a
-                  href='https://github.com/basia1111'
-                  className='text-light-text-secondary transition-all hover:scale-110 hover:text-accent-primary dark:text-dark-text-secondary'
-                >
-                  <Github className='h-6 w-6' />
-                </a>
-                <a
-                  href='https://www.linkedin.com/in/barbara-%C5%BCygilewicz-905635332/'
-                  className='text-light-text-secondary transition-all hover:scale-110 hover:text-accent-primary dark:text-dark-text-secondary'
-                >
-                  <Linkedin className='h-6 w-6' />
-                </a>
-                <a
-                  href='mailto:basia.zygilewicz@gmail.com'
-                  className='text-light-text-secondary transition-all hover:scale-110 hover:text-accent-primary dark:text-dark-text-secondary'
-                >
-                  <Mail className='h-6 w-6' />
-                </a>
+                {[
+                  { href: 'https://github.com/basia1111', icon: <Github className='h-6 w-6' /> },
+                  { href: 'https://www.linkedin.com/in/barbara-%C5%BCygilewicz-905635332/', icon: <Linkedin className='h-6 w-6' /> },
+                  { href: 'mailto:basia.zygilewicz@gmail.com', icon: <Mail className='h-6 w-6' /> },
+                ].map((link, index) => (
+                  <a
+                    key={index}
+                    href={link.href}
+                    className='text-light-text-secondary transition-all hover:text-accent-primary dark:text-dark-text-secondary dark:hover:text-accent-light'
+                  >
+                    {link.icon}
+                  </a>
+                ))}
               </div>
             </div>
           </div>
 
           <div className='relative mx-auto mt-10 h-[300px] w-full max-w-md md:h-[450px]'>
             <MorphingBlobs />
-            <div className='absolute left-1/2 top-1/2 z-10 mt-[30px] h-[120px] w-[120px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-indigo-900/50 blur-xl md:h-[260px] md:w-[260px]' />
+            <div className='absolute left-1/2 top-1/2 z-10 mt-[30px] h-[120px] w-[120px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent-primary/50 blur-xl md:h-[260px] md:w-[260px]' />
             <img
               src='/my-photo.png'
               alt='Basia'

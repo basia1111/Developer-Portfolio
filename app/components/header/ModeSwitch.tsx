@@ -40,7 +40,7 @@ const ModeSwitch = () => {
   ];
 
   return (
-    <div className='gap-0.5 rounded-full bg-light-bg-primary p-0.5 file:flex dark:bg-dark-bg-tertiary/50'>
+    <div className='gap-0.5 rounded-full bg-white p-0.5 file:flex dark:bg-dark-bg-primary/50'>
       {modes.map(({ name, icon: Icon }) => (
         <button
           key={name}

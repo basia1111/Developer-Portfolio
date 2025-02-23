@@ -14,6 +14,7 @@ interface TerminalBlockProps {
   };
   onComplete: () => void;
 }
+
 const TerminalBlock = ({ index, line, onComplete }: TerminalBlockProps) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
@@ -74,16 +75,16 @@ const TerminalBlock = ({ index, line, onComplete }: TerminalBlockProps) => {
     <>
       <motion.div ref={ref} key={index} initial='hidden' animate={isInView ? 'visible' : 'hidden'}>
         <motion.div className='mb-3 flex items-center overflow-hidden text-xs md:text-sm' variants={lineVariants}>
-          <span className='mr-2 flex-shrink-0 text-pink-500'>❯</span>
+          <span className='mr-2 flex-shrink-0 text-accent-light'>❯</span>
           {line.command.text.split('').map((letter, i) => (
-            <motion.span key={i} className='relative whitespace-nowrap text-emerald-400' variants={typingVariants}>
+            <motion.span key={i} className='relative whitespace-nowrap text-accent-primary' variants={typingVariants}>
               {letter}
             </motion.span>
           ))}
         </motion.div>
         {isCommandComplete && (
           <motion.div className='rounded pl-4' variants={sectionVariants}>
-            <motion.span variants={typingVariants} className='text-accent-primary block text-xs font-semibold md:text-sm'>
+            <motion.span variants={typingVariants} className='block text-xs font-semibold text-light-text-primary md:text-sm dark:text-dark-text-primary'>
               {line.section.title}
             </motion.span>
             {line.section.content &&
@@ -91,7 +92,7 @@ const TerminalBlock = ({ index, line, onComplete }: TerminalBlockProps) => {
                 <motion.span
                   key={i}
                   variants={typingVariants}
-                  className='text-light-text-secondary dark:text-dark-text-secondary whitespace-pre-line text-xs md:text-sm'
+                  className='whitespace-pre-line text-xs text-light-text-secondary md:text-sm dark:text-dark-text-secondary'
                 >
                   {`\n ${l}`}
                 </motion.span>
