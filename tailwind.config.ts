@@ -30,15 +30,15 @@ export default {
       colors: {
         light: {
           bg: {
-            primary: '#f8f9fc', // Very light blue-gray instead of pure white
-            secondary: '#f3f4f8', // Slightly darker background
-            tertiary: '#eef0f5', // For deeper layers
-            hover: '#e8eaf2', // For hover states
+            primary: '#f8f9fc',
+            secondary: '#f3f4f8',
+            tertiary: '#eef0f5',
+            hover: '#e8eaf2',
           },
           text: {
-            primary: '#1a1b1e', // Not pure black, slightly softer
-            secondary: '#4a4c55', // Medium contrast
-            muted: '#71747f', // Lower contrast for subtle text
+            primary: '#1a1b1e',
+            secondary: '#4a4c55',
+            muted: '#71747f',
           },
         },
         dark: {

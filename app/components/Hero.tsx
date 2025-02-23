@@ -52,8 +52,9 @@ const Hero = () => {
 
               <p className='relative max-w-xl overflow-hidden text-sm text-light-text-secondary md:text-lg dark:text-dark-text-secondary'>
                 <motion.span initial='initial' animate='animate' variants={blockVariants} className='absolute h-full w-full bg-white dark:bg-accent-primary' />
-                Passionate about crafting efficient web solutions and eager to grow as a developer. Currently expanding my React skills while seeking
-                opportunities to contribute to meaningful projects in a professional environment.
+                I’m a detail-oriented front-end developer who loves solving problems and bringing ideas to life. With experience in JavaScript, React, and PHP,
+                I enjoy creating visually appealing and intuitive web experiences. I'm always curious, always learning, and excited to grow with every project I
+                take on.
               </p>
             </div>
 

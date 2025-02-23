@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
+import ReactMarkdown from 'react-markdown';
 
 interface TerminalBlockProps {
   index: number;

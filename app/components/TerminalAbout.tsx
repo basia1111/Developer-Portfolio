@@ -22,7 +22,7 @@ const TerminalAbout = () => {
               <div className='h-3 w-3 rounded-full bg-accent-primary' />
             </div>
           </div>
-          <div className='space-y-6 p-3 font-mono text-base leading-relaxed md:p-6'>
+          <div className='space-y-6 p-3 py-12 font-mono text-base leading-relaxed md:px-6'>
             {terminalLines.slice(0, activeIndex + 1).map((line, index) => (
               <TerminalBlock
                 key={index}
