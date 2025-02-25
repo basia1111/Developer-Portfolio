@@ -100,8 +100,8 @@ const SkillsSection = () => {
             <div className='mx-auto max-w-6xl'>
               <div className='grid grid-cols-3 justify-items-center gap-6 md:grid-cols-4 lg:grid-cols-7'>
                 {tab.skills.map((skill, index) => (
-                  <div key={index} className='group w-32'>
-                    <div className='flex h-28 w-full flex-col items-center justify-center gap-3 rounded-xl border border-accent-primary/20 bg-white p-4 transition-all hover:border-accent-primary/30 dark:bg-dark-bg-secondary dark:hover:border-accent-light/30'>
+                  <div key={index} className='group w-24 sm:w-32'>
+                    <div className='flex w-full flex-col items-center justify-center gap-3 rounded-xl border border-accent-primary/20 bg-white p-4 transition-all hover:border-accent-primary/30 sm:h-28 dark:bg-dark-bg-secondary dark:hover:border-accent-light/30'>
                       <div className={`text-light-text-muted transition-all duration-300 dark:text-dark-text-secondary ${skill.color}`}>{skill.icon}</div>
                       <span className='text-center text-sm font-medium text-light-text-primary dark:text-dark-text-primary'>{skill.name}</span>
                     </div>
