@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Squash as Hamburger } from 'hamburger-react';
 import { menuItems, scrollToSection } from './Menu';
-import ModeSwitch from './ModeSwitch';
 import { AnimatePresence, motion } from 'framer-motion';
 
 const menuVariants = {
@@ -40,14 +39,13 @@ const MenuMobile = () => {
 
   return (
     <div className='flex items-center sm:hidden'>
-      <ModeSwitch />
-      <Hamburger toggled={isOpen} toggle={setIsOpen} color='#6466f1' size={24} />
+      <Hamburger toggled={isOpen} toggle={setIsOpen} color='#a855f7' size={24} />
       <AnimatePresence>
         {isOpen && (
           <motion.div variants={menuVariants} initial='initial' animate='animate' exit='exit' className='fixed inset-0 h-screen'>
-            <motion.div className='absolute inset-0 bg-gradient-to-b from-light-bg-secondary via-[#eaeffd]/95 to-light-bg-secondary dark:from-dark-bg-tertiary dark:via-[#212244]/95 dark:to-dark-bg-tertiary' />
+            <motion.div className='absolute inset-0 bg-gradient-to-br from-gray-100/95 via-purple-100/90 to-gray-100/95 backdrop-blur-md dark:bg-gradient-to-br dark:from-gray-800/95 dark:to-gray-900/95' />
             <motion.div variants={containerVariants} className='relative flex h-full flex-col items-start justify-start gap-12 p-6 pt-20'>
-              <ul className='grid gap-4'>
+              <ul className='grid gap-6'>
                 {menuItems.map((item) => (
                   <motion.li
                     variants={itemVariants}
@@ -56,13 +54,14 @@ const MenuMobile = () => {
                       setIsOpen(false);
                       scrollToSection(item.id);
                     }}
-                    className='flex gap-2'
+                    className='group flex cursor-pointer gap-2'
                   >
-                    <span className='text-xl text-light-text-secondary dark:text-dark-text-primary/95'>{item.label}</span>
+                    <span className='text-2xl font-light text-gray-700 transition-all duration-300 hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 hover:bg-clip-text hover:text-transparent dark:text-gray-300'>
+                      {item.label}
+                    </span>
                   </motion.li>
                 ))}
               </ul>
-              <motion.div variants={itemVariants} className='scale-125'></motion.div>
             </motion.div>
           </motion.div>
         )}

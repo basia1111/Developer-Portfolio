@@ -31,6 +31,7 @@ const TerminalBlock = ({ index, line, onComplete }: TerminalBlockProps) => {
       },
     },
   };
+
   const sectionVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -40,6 +41,7 @@ const TerminalBlock = ({ index, line, onComplete }: TerminalBlockProps) => {
       },
     },
   };
+
   const typingVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -76,16 +78,17 @@ const TerminalBlock = ({ index, line, onComplete }: TerminalBlockProps) => {
     <>
       <motion.div ref={ref} key={index} initial='hidden' animate={isInView ? 'visible' : 'hidden'}>
         <motion.div className='mb-3 flex items-center overflow-hidden text-xs md:text-sm' variants={lineVariants}>
-          <span className='mr-2 flex-shrink-0 text-accent-light'>❯</span>
+          <span className='mr-2 flex-shrink-0 text-purple-500 dark:text-purple-400'>❯</span>
           {line.command.text.split('').map((letter, i) => (
-            <motion.span key={i} className='relative whitespace-nowrap text-accent-primary' variants={typingVariants}>
+            <motion.span key={i} className='relative whitespace-nowrap font-semibold text-purple-500' variants={typingVariants}>
               {letter}
             </motion.span>
           ))}
         </motion.div>
+
         {isCommandComplete && (
           <motion.div className='rounded pl-4' variants={sectionVariants}>
-            <motion.span variants={typingVariants} className='block text-xs font-semibold text-light-text-primary md:text-sm dark:text-dark-text-primary'>
+            <motion.span variants={typingVariants} className='block text-xs font-bold text-gray-800 md:text-sm dark:text-white'>
               {line.section.title}
             </motion.span>
             {line.section.content &&
@@ -93,7 +96,7 @@ const TerminalBlock = ({ index, line, onComplete }: TerminalBlockProps) => {
                 <motion.span
                   key={i}
                   variants={typingVariants}
-                  className='whitespace-pre-line text-xs text-light-text-secondary md:text-sm dark:text-dark-text-secondary'
+                  className='whitespace-pre-line text-xs font-light leading-relaxed text-gray-600 md:text-sm dark:text-gray-300'
                 >
                   {`\n ${l}`}
                 </motion.span>

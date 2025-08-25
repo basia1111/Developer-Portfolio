@@ -1,3 +1,4 @@
+'use client';
 import React, { useEffect, useState } from 'react';
 
 export const menuItems = [
@@ -18,49 +19,44 @@ const Menu = () => {
   const [activeSection, setActiveSection] = useState<string>('home');
 
   useEffect(() => {
-    const options = {
-      root: null,
-      rootMargin: '0px -30% 0px -10%',
-      threshold: 0.4,
-    };
+    const handleScroll = () => {
+      let currentSection = menuItems[0].id;
 
-    const callback = (entries: IntersectionObserverEntry[]) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setActiveSection(entry.target.id);
+      menuItems.forEach((item) => {
+        const el = document.getElementById(item.id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= window.innerHeight / 2) {
+            currentSection = item.id;
+          }
         }
       });
+
+      setActiveSection(currentSection);
     };
 
-    const observer = new IntersectionObserver(callback, options);
-    menuItems.forEach((item) => {
-      const foundItem = document.getElementById(item.id);
-      if (foundItem) observer.observe(foundItem);
-    });
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
 
-    return () => observer.disconnect();
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
-    <nav className='hidden sm:block'>
-      <ul className='flex items-center gap-8'>
-        {menuItems.map((item) => (
-          <li key={item.id} onClick={() => scrollToSection(item.id)} className='relative cursor-pointer font-mono text-sm'>
-            <div
-              className={`flex items-center gap-2 px-2 py-1 transition-colors ${
-                item.id === activeSection
-                  ? 'text-accent-primary dark:text-accent-light'
-                  : 'text-light-text-secondary hover:text-accent-primary dark:text-dark-text-secondary dark:hover:text-accent-light'
-              }`}
-            >
-              <span className={`${item.id === activeSection ? 'opacity-100' : 'opacity-0'}`}>❯</span>
-              {item.label}
-            </div>
-            {item.id === activeSection && <div className='absolute bottom-0 left-0 h-px w-full bg-accent-primary dark:bg-accent-light' />}
-          </li>
-        ))}
-      </ul>
-    </nav>
+    <ul className='hidden items-center gap-2 sm:flex'>
+      {menuItems.map((item) => (
+        <li key={item.id} onClick={() => scrollToSection(item.id)} className='relative cursor-pointer text-sm'>
+          <div
+            className={`flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition-all duration-300 ${
+              item.id === activeSection
+                ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg shadow-purple-500/30'
+                : 'text-gray-700 hover:bg-gray-200 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800/60 dark:hover:text-white'
+            }`}
+          >
+            {item.label}
+          </div>
+        </li>
+      ))}
+    </ul>
   );
 };
 

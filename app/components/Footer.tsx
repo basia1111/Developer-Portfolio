@@ -1,20 +1,23 @@
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
   return (
-    <footer className='border-t border-accent-primary/10 bg-light-bg-secondary py-6 backdrop-blur-sm dark:bg-dark-bg-secondary'>
+    <footer className='border-t border-gray-200 bg-white/70 py-8 backdrop-blur-md dark:border-gray-700/30 dark:bg-gray-900/50'>
       <div className='mx-auto max-w-7xl px-4'>
-        <div className='flex flex-col items-center justify-between gap-4 md:flex-row'>
+        <div className='flex flex-col items-center justify-between gap-6 md:flex-row'>
           <div className='flex items-center gap-2'>
-            <span className='font-mono text-sm text-accent-primary dark:text-accent-light'>❯</span>
-            <p className='text-sm text-light-text-secondary dark:text-dark-text-secondary'>© 2024 Basia Żygilewicz</p>
+            <span className='font-mono text-sm text-purple-400'>❯</span>
+            <p className='text-sm font-light text-gray-700 dark:text-gray-300'>
+              © {currentYear} <span className='font-medium text-gray-700 dark:text-white'>Basia Żygilewicz</span>
+            </p>
           </div>
 
-          <div className='flex items-center gap-2 text-sm'>
-            <span className='text-light-text-secondary dark:text-dark-text-secondary'>Built with</span>
-            <span className='font-mono text-accent-primary dark:text-accent-light'>Next.js</span>
-            <span className='text-light-text-secondary dark:text-dark-text-secondary'>+</span>
-            <span className='font-mono text-accent-primary dark:text-accent-light'>FramerMotion</span>
-            <span className='text-light-text-secondary dark:text-dark-text-secondary'>+</span>
-            <span className='font-mono text-accent-primary dark:text-accent-light'>Tailwind</span>
+          <div className='flex items-center gap-3 text-xs sm:text-sm'>
+            <span className='font-light text-gray-700 dark:text-gray-400'>Built with</span>
+            <span className='bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text font-mono font-medium text-transparent'>Next.js</span>
+            <span className='text-gray-500'>+</span>
+            <span className='bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text font-mono font-medium text-transparent'>FramerMotion</span>
+            <span className='text-gray-500'>+</span>
+            <span className='bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text font-mono font-medium text-transparent'>Tailwind</span>
           </div>
         </div>
       </div>
