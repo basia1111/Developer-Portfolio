@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Nav from './components/nav';
 import Hero from './components/hero';
+import { Stats } from './components/stats';
 
 export default function Home() {
   const [loaded, setLoaded] = useState(false);
@@ -10,6 +11,7 @@ export default function Home() {
     <div className='relative min-h-screen'>
       <Nav />
       <Hero />
+      <Stats />
     </div>
   );
 }
