@@ -35,7 +35,7 @@ function PersonalDetails({ i, loaded }: Props) {
     <motion.div {...motionProps} className='mb-[clamp(20px,3vh,32px)] flex flex-wrap items-center justify-between gap-3'>
       <div className='flex items-center gap-4'>
         <div className='border-accent/20 bg-elevated flex h-[64px] w-[64px] shrink-0 items-center justify-center overflow-hidden rounded-full border-2'>
-          <Image src='/profile.png' alt='profile picture' width={150} height={150} />
+          <Image src='/my-photo.png' alt='profile picture' width={150} height={150} />
         </div>
         <div className='font-display text-primary text-[clamp(22px,3vw,32px)] font-semibold tracking-[-0.02em]'>Barbara Żygilewicz</div>
       </div>

@@ -7,6 +7,7 @@ import { Stats } from './components/stats';
 import { Toolbox } from './components/tools';
 import { Experience } from './components/experience';
 import { Projects } from './components/projects';
+import { Contact } from './components/contact';
 
 export default function Home() {
   const [loaded, setLoaded] = useState(false);
@@ -20,6 +21,7 @@ export default function Home() {
       <Toolbox />
       <Experience />
       <Projects />
+      <Contact />
     </div>
   );
 }
