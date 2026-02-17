@@ -29,5 +29,5 @@ export default function Nav() {
 }
 
 function NavItem({ name }: { name: string }) {
-  return <span className='text-muted font-mono text-xs font-normal'>{name}</span>;
+  return <span className='text-muted hover:text-primary font-mono text-xs font-normal'>{name}</span>;
 }
