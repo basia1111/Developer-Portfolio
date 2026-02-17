@@ -5,6 +5,7 @@ import Nav from './components/nav';
 import Hero from './components/hero';
 import { Stats } from './components/stats';
 import { Toolbox } from './components/tools';
+import { Experience } from './components/experience';
 
 export default function Home() {
   const [loaded, setLoaded] = useState(false);
@@ -16,6 +17,7 @@ export default function Home() {
       <Hero />
       <Stats />
       <Toolbox />
+      <Experience />
     </div>
   );
 }
