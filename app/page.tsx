@@ -8,6 +8,7 @@ import { Toolbox } from './components/tools';
 import { Experience } from './components/experience';
 import { Projects } from './components/projects';
 import { Contact } from './components/contact';
+import { Footer } from './components/footer';
 
 export default function Home() {
   const [loaded, setLoaded] = useState(false);
@@ -22,6 +23,7 @@ export default function Home() {
       <Experience />
       <Projects />
       <Contact />
+      <Footer />
     </div>
   );
 }
