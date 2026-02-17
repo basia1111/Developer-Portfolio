@@ -80,13 +80,13 @@ export function HeroButtons({ i, loaded }: Props) {
         RESUME ↓
       </a>
       {[
-        { label: 'GitHub', icon: Github },
-        { label: 'LinkedIn', icon: Linkedin },
-        { label: 'Email', icon: Mail },
-      ].map(({ label, icon: Icon }) => (
+        { label: 'GitHub', icon: Github, link: 'https://github.com/basia1111' },
+        { label: 'LinkedIn', icon: Linkedin, link: 'https://www.linkedin.com/in/barbara-%C5%BCygilewicz-905635332/' },
+        { label: 'Email', icon: Mail, link: 'mailto:basia.zygilewicz@gmail.com' },
+      ].map(({ label, icon: Icon, link }) => (
         <a
           key={label}
-          href='#'
+          href={link}
           className='border-stroke bg-surface text-primary hover:border-edge inline-flex items-center gap-2 border px-[22px] py-[13px] font-mono text-[13px] font-medium tracking-[0.06em] transition'
         >
           <Icon size={16} strokeWidth={1.5} />

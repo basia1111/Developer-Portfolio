@@ -2,11 +2,6 @@ import { motion } from 'framer-motion';
 import { Github, Code2, FileCode, Server, Atom, ArrowRight, Wind, Database, CircleDot, GitBranch, Plug, Cloud } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
-type Tool = {
-  name: string;
-  icon: React.ComponentType<{ size?: number; strokeWidth?: number; style?: React.CSSProperties }>;
-};
-
 const tools = [
   { name: 'HTML5/CSS3', icon: Code2 },
   { name: 'TypeScript', icon: FileCode },

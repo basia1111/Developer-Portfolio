@@ -1,12 +1,7 @@
 import { motion } from 'framer-motion';
 
-type Stat = {
-  num: string;
-  label: string;
-};
-
 export function Stats() {
-  const stats: Stat[] = [
+  const stats = [
     { num: '1.5+', label: 'YEARS OF IT EXPERIENCE' },
     { num: '300+', label: 'GITHUB COMMITS' },
   ];

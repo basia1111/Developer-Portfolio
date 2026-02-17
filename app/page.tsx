@@ -6,6 +6,7 @@ import Hero from './components/hero';
 import { Stats } from './components/stats';
 import { Toolbox } from './components/tools';
 import { Experience } from './components/experience';
+import { Projects } from './components/projects';
 
 export default function Home() {
   const [loaded, setLoaded] = useState(false);
@@ -18,6 +19,7 @@ export default function Home() {
       <Stats />
       <Toolbox />
       <Experience />
+      <Projects />
     </div>
   );
 }
