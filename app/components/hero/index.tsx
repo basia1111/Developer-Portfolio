@@ -34,7 +34,7 @@ function PersonalDetails({ i, loaded }: Props) {
   return (
     <motion.div {...motionProps} className='mb-[clamp(20px,3vh,32px)] flex flex-wrap items-center justify-between gap-3'>
       <div className='flex items-center gap-4'>
-        <div className='border-accent/20 bg-elevated flex h-[64px] w-[64px] shrink-0 items-center justify-center overflow-hidden rounded-full border-2'>
+        <div className='border-accent/20 bg-elevated flex h-[48px] w-[48px] shrink-0 items-center justify-center overflow-hidden rounded-full border-2 sm:h-[64px] sm:w-[64px]'>
           <Image src='/my-photo.png' alt='profile picture' width={150} height={150} />
         </div>
         <div className='font-display text-primary text-[clamp(22px,3vw,32px)] font-semibold tracking-[-0.02em]'>Barbara Żygilewicz</div>
@@ -60,7 +60,7 @@ export function Description({ i, loaded }: Props) {
   const motionProps = getMotionProps(loaded, i);
 
   return (
-    <motion.p {...motionProps} className='font-body text-body mt-[clamp(24px,4vh,40px)] max-w-[460px] text-[17px] leading-[1.7]'>
+    <motion.p {...motionProps} className='font-body text-body mt-[clamp(24px,4vh,40px)] max-w-[460px] text-[14px] leading-[1.7] sm:text-[17px]'>
       I build web applications across the full stack — from React and Next.js on the frontend to Node.js, AWS, and CI/CD on the backend. Currently working as a
       Node.js engineer intern at Cleeng, extending integration systems at scale.
     </motion.p>
@@ -75,7 +75,7 @@ export function HeroButtons({ i, loaded }: Props) {
       <a
         href='/resume.pdf'
         target='_blank'
-        className='border-accent bg-accent text-primary hover:text-accent border px-8 py-[14px] font-mono text-[14px] font-bold tracking-[0.08em] transition-all hover:bg-transparent'
+        className='border-accent bg-accent text-primary hover:text-accent border px-8 py-[13px] font-mono text-[12px] font-bold tracking-[0.08em] transition-all hover:bg-transparent sm:w-auto sm:text-[14px]'
       >
         RESUME ↓
       </a>
@@ -87,7 +87,7 @@ export function HeroButtons({ i, loaded }: Props) {
         <a
           key={label}
           href={link}
-          className='border-stroke bg-surface text-primary hover:border-edge inline-flex items-center gap-2 border px-[22px] py-[13px] font-mono text-[13px] font-medium tracking-[0.06em] transition'
+          className='border-stroke bg-surface text-primary hover:border-edge inline-flex items-center gap-2 border px-[22px] py-[13px] font-mono text-[12px] font-medium tracking-[0.06em] transition sm:w-auto sm:text-[13px]'
         >
           <Icon size={16} strokeWidth={1.5} />
           {label}

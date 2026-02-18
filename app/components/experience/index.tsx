@@ -51,6 +51,11 @@ export function Experience() {
 
   return (
     <motion.div {...containerMotionProps} className='mb-[clamp(56px,10vh,96px)]'>
+      <div className='border-rule flex w-full items-baseline gap-4 border-b pb-4'>
+        <span className='font-display text-primary text-[clamp(24px,3vw,32px)] font-semibold tracking-[-0.02em]'>Experience</span>
+        <span className='text-accent font-mono text-[12px] tracking-[0.06em]'>03</span>
+      </div>
+
       <div className='flex flex-col gap-4'>
         {EXPERIENCE.map((exp, i) => (
           <motion.div

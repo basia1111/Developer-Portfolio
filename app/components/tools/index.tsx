@@ -34,14 +34,18 @@ export function Toolbox() {
 
   return (
     <motion.div {...containerMotionProps} className='mb-[clamp(56px,10vh,96px)]'>
+      <div className='flex w-full items-baseline gap-4 border-b border-rule pb-4'>
+        <span className='font-display text-[clamp(24px,3vw,32px)] font-semibold tracking-[-0.02em] text-primary'>Toolbox</span>
+        <span className='font-mono text-[12px] tracking-[0.06em] text-accent'>11</span>
+      </div>
       <div className='flex flex-wrap gap-2.5'>
         {tools.map((t, i) => (
           <motion.span
             key={t.name}
             {...tagMotionProps(i)}
-            className='border-stroke bg-surface text-primary hover:bg-accent group inline-flex items-center gap-2.5 border px-[22px] py-3 font-mono text-[14px] tracking-[0.08em] transition-all'
+            className='h-tag group inline-flex items-center gap-2.5 border border-stroke bg-surface px-[22px] py-3 font-mono text-[14px] tracking-[0.08em] text-primary transition-all hover:bg-accent'
           >
-            <t.icon size={18} strokeWidth={1.5} className='text-accent group-hover:text-primary transition-colors' />
+            <t.icon size={18} strokeWidth={1.5} className='text-accent transition-colors group-hover:text-primary' />
             {t.name}
           </motion.span>
         ))}

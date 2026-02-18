@@ -9,6 +9,8 @@ import { Experience } from './components/experience';
 import { Projects } from './components/projects';
 import { Contact } from './components/contact';
 import { Footer } from './components/footer';
+import RunnerGanme from './components/runnerGame';
+import Cursor from './components/cursor';
 
 export default function Home() {
   const [loaded, setLoaded] = useState(false);
@@ -22,6 +24,7 @@ export default function Home() {
       <Toolbox />
       <Experience />
       <Projects />
+      <RunnerGanme />
       <Contact />
       <Footer />
     </div>

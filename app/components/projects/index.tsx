@@ -52,47 +52,49 @@ export function Projects() {
   });
 
   return (
-    <motion.div {...containerMotionProps} className='mb-[24px]'>
+    <motion.div {...containerMotionProps} className='mb-[clamp(56px,10vh,96px)]'>
+      <div className='flex w-full items-baseline gap-4 border-b border-rule pb-4'>
+        <span className='font-display text-[clamp(24px,3vw,32px)] font-semibold tracking-[-0.02em] text-primary'>Selected Projects</span>
+        <span className='font-mono text-[12px] tracking-[0.06em] text-accent'>03</span>
+      </div>
       <div className='mt-4 grid grid-cols-1 gap-3 md:grid-cols-3'>
         {projects.map((p, i) => (
           <motion.div
             key={i}
             {...cardMotionProps(i)}
-            className='bg-surface hover:border-accent group relative flex flex-col border-t-2 border-transparent transition-shadow hover:shadow-[0_16px_48px_rgba(0,0,0,0.5)]'
+            className='h-card group relative flex flex-col border-t-2 border-transparent bg-surface transition-shadow hover:border-accent hover:shadow-[0_16px_48px_rgba(0,0,0,0.5)]'
           >
-            <div className='bg-raised group-hover:bg-raised/80 flex aspect-[16/10] w-full items-center justify-center overflow-hidden transition-colors'>
+            <div className='flex aspect-[16/10] w-full items-center justify-center overflow-hidden bg-raised transition-colors group-hover:bg-raised/80'>
               <Image src={p.img} height={500} width={500} alt='project img' className='h-full w-full object-cover' />
             </div>
             <div className='flex flex-1 flex-col p-[clamp(18px,2.5vw,28px)]'>
               <div className='mb-3'>
-                <div className='font-display mb-1 text-[clamp(20px,2.5vw,26px)] font-semibold tracking-[-0.02em]'>{p.name}</div>
-                <div className='font-body group-hover:text-accent text-muted text-[14px] transition-colors'>{p.type}</div>
+                <div className='mb-1 font-display text-[clamp(20px,2.5vw,26px)] font-semibold tracking-[-0.02em]'>{p.name}</div>
+                <div className='font-body text-[14px] text-muted transition-colors group-hover:text-accent'>{p.type}</div>
               </div>
 
-              <p className='font-body text-body mb-4 flex-1 text-[14px] leading-[1.6]'>{p.desc}</p>
+              <p className='mb-4 flex-1 font-body text-[14px] leading-[1.6] text-body'>{p.desc}</p>
 
               <div className='mb-4 flex flex-wrap gap-1.5'>
                 {p.tech.map((t) => (
-                  <span key={t} className='text-accent bg-accent/5 border-accent/20 border px-3 py-[2px] font-mono text-[12px] tracking-[0.03em]'>
+                  <span key={t} className='border border-accent/20 bg-accent/5 px-3 py-[2px] font-mono text-[12px] tracking-[0.03em] text-accent'>
                     {t}
                   </span>
                 ))}
               </div>
-
-              {/* Footer with GitHub and optional Live link */}
-              <div className='border-rule flex flex-wrap items-center gap-4 border-t pt-3'>
-                <a href={p.github} target='_blank' rel='noopener noreferrer' className='text-accent hover:text-primary font-mono text-[12px] transition-colors'>
+              <div className='flex flex-wrap items-center gap-4 border-t border-rule pt-3'>
+                <a href={p.github} target='_blank' rel='noopener noreferrer' className='font-mono text-[12px] text-accent transition-colors hover:text-primary'>
                   GitHub →
                 </a>
                 {p.live && (
-                  <a href={p.live} target='_blank' rel='noopener noreferrer' className='text-accent hover:text-primary font-mono text-[12px] transition-colors'>
+                  <a href={p.live} target='_blank' rel='noopener noreferrer' className='font-mono text-[12px] text-accent transition-colors hover:text-primary'>
                     Live Demo →
                   </a>
                 )}
               </div>
             </div>
 
-            <div className='bg-accent absolute bottom-0 left-0 h-[2px] w-0 transition-[width] group-hover:w-full' />
+            <div className='absolute bottom-0 left-0 h-[2px] w-0 bg-accent transition-[width] group-hover:w-full' />
           </motion.div>
         ))}
       </div>
