@@ -51,9 +51,9 @@ export function Experience() {
 
   return (
     <motion.div {...containerMotionProps} className='mb-[clamp(56px,10vh,96px)]'>
-      <div className='border-rule flex w-full items-baseline gap-4 border-b pb-4'>
-        <span className='font-display text-primary text-[clamp(24px,3vw,32px)] font-semibold tracking-[-0.02em]'>Experience</span>
-        <span className='text-accent font-mono text-[12px] tracking-[0.06em]'>03</span>
+      <div className='flex w-full items-baseline gap-4 border-b border-rule pb-4'>
+        <span className='font-display text-[clamp(24px,3vw,32px)] font-semibold tracking-[-0.02em] text-primary'>Experience</span>
+        <span className='font-mono text-[12px] tracking-[0.06em] text-accent'>03</span>
       </div>
 
       <div className='flex flex-col gap-4'>
@@ -61,17 +61,17 @@ export function Experience() {
           <motion.div
             key={i}
             {...rowMotionProps(i)}
-            className='border-raised group grid grid-cols-1 items-start gap-[clamp(20px,4vw,40px)] border-b px-[clamp(12px,2vw,20px)] py-[clamp(24px,3.5vh,36px)] transition-all md:grid-cols-2'
+            className='h-card group grid grid-cols-1 items-start gap-[clamp(20px,4vw,40px)] border-b border-l-[3px] border-raised border-l-surface px-[clamp(12px,2vw,20px)] py-[clamp(24px,3.5vh,36px)] transition-all hover:border-l-accent hover:bg-surface md:grid-cols-2'
           >
             <div>
-              <div className='font-display group-hover:text-accent text-sub mb-2 text-[clamp(22px,2.5vw,30px)] font-semibold tracking-[-0.02em] transition-colors'>
+              <div className='mb-2 font-display text-[clamp(22px,2.5vw,30px)] font-semibold tracking-[-0.02em] text-sub transition-colors group-hover:text-accent'>
                 {exp.role}
               </div>
-              <div className='text-muted font-mono text-[13px] tracking-[0.04em]'>{exp.company}</div>
+              <div className='font-mono text-[13px] tracking-[0.04em] text-muted'>{exp.company}</div>
             </div>
             <div>
-              <div className='text-accent mb-2 font-mono text-[13px] tracking-[0.06em] opacity-70'>{exp.period}</div>
-              <div className='font-body text-body text-[16px] leading-[1.65]'>{exp.desc}</div>
+              <div className='mb-2 font-mono text-[13px] tracking-[0.06em] text-accent opacity-70'>{exp.period}</div>
+              <div className='font-body text-[16px] leading-[1.65] text-body'>{exp.desc}</div>
             </div>
           </motion.div>
         ))}
