@@ -79,8 +79,10 @@ export function HeroButtons({ i, loaded }: Props) {
   return (
     <motion.div {...motionProps} className='mt-[clamp(24px,4vh,36px)] flex flex-wrap items-center gap-3'>
       <a
-        href='/resume.pdf'
+        href='/Barbara_Zygilewicz_CV_EN.pdf'
+        download
         target='_blank'
+        rel='noopener noreferrer'
         className='border border-accent bg-accent px-8 py-[13px] font-mono text-[12px] font-bold tracking-[0.08em] text-primary transition-all hover:bg-transparent hover:text-accent sm:w-auto sm:text-[14px]'
       >
         RESUME ↓

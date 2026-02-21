@@ -17,17 +17,17 @@ export function Contact() {
   };
 
   return (
-    <motion.div {...containerMotionProps} className='mt-[clamp(64px,10vh,96px)]'>
-      <div className='border-rule mb-[28px] flex items-baseline gap-4 border-b pb-4'>
-        <span className='font-display text-primary text-[clamp(24px,3vw,32px)] font-semibold tracking-[-0.02em]'>Contact</span>
+    <motion.div {...containerMotionProps} className='mt-[clamp(64px,10vh,96px)]' id='contact'>
+      <div className='mb-[28px] flex items-baseline gap-4 border-b border-rule pb-4'>
+        <span className='font-display text-[clamp(24px,3vw,32px)] font-semibold tracking-[-0.02em] text-primary'>Contact</span>
       </div>
       <div className='max-w-[560px]'>
-        <p className='font-body text-body mb-[clamp(24px,4vh,40px)] text-[17px] leading-[1.7]'>
+        <p className='mb-[clamp(24px,4vh,40px)] font-body text-[17px] leading-[1.7] text-body'>
           I'm looking for my first full-time role as a full-stack developer. If you're hiring or just want to chat about code, I'd love to hear from you.
         </p>
         <a
           href='mailto:basia.zygilewicz@gmail.com'
-          className='font-display text-accent border-accent/20 hover:border-accent inline-block border-b-2 pb-1 text-[clamp(22px,3vw,34px)] font-semibold transition-colors'
+          className='inline-block border-b-2 border-accent/20 pb-1 font-display text-[clamp(22px,3vw,34px)] font-semibold text-accent transition-colors hover:border-accent'
         >
           basia.zygilewicz@gmail.com
         </a>
@@ -41,9 +41,9 @@ export function Contact() {
               href={link}
               target='_blank'
               rel='noopener noreferrer'
-              className='text-muted hover:text-accent group flex items-center gap-2 font-mono text-[13px] transition-colors'
+              className='group flex items-center gap-2 font-mono text-[13px] text-muted transition-colors hover:text-accent'
             >
-              <Icon size={16} strokeWidth={1.5} className='group-hover:text-accent transition-colors' />
+              <Icon size={16} strokeWidth={1.5} className='transition-colors group-hover:text-accent' />
               {label}
             </a>
           ))}

@@ -18,16 +18,20 @@ export default function Nav() {
       }}
       transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 100 }}
     >
-      <div className='text-primary font-mono text-xs font-light tracking-[0.15em]'>BŻ</div>
-      <div className='flex items-center gap-7'>
-        {['Projects', 'Experience', 'Contact'].map((item) => (
-          <NavItem key={item} name={item} />
+      <div className='font-mono text-xs font-light tracking-[0.15em] text-primary'>BŻ</div>
+      <div className='flex items-center gap-4 md:gap-7'>
+        {['Skills', 'Experience', 'Projects', 'Contact'].map((item) => (
+          <NavItem key={item} name={item} id={item.toLowerCase()} />
         ))}
       </div>
     </motion.div>
   );
 }
 
-function NavItem({ name }: { name: string }) {
-  return <span className='text-muted hover:text-primary font-mono text-xs font-normal'>{name}</span>;
+function NavItem({ name, id }: { name: string; id: string }) {
+  return (
+    <a href={`#${id}`} className='font-mono text-xs font-normal text-muted hover:text-primary'>
+      {name}
+    </a>
+  );
 }
