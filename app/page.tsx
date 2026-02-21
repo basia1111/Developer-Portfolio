@@ -1,25 +1,32 @@
 'use client';
 
-import ContactSection from './components/contact/Contact';
-import Gradients from './components/layout /Gradients';
-import Hero from './components/hero/Hero';
-import ProjectsSection from './components/projects/Projects';
-import SkillsSection from './components/skills/Skills';
-import TerminalAbout from './components/terminal/TerminalAbout';
+import { useState } from 'react';
+import Nav from './components/nav';
+import Hero from './components/hero';
+import { Stats } from './components/stats';
+import { Toolbox } from './components/tools';
+import { Experience } from './components/experience';
+import { Projects } from './components/projects';
+import { Contact } from './components/contact';
+import { Footer } from './components/footer';
+import RunnerGanme from './components/runnerGame';
+import Cursor from './components/cursor';
 
 export default function Home() {
+  const [loaded, setLoaded] = useState(false);
   return (
-    <div className='relative min-h-screen overflow-hidden'>
-      <div className='relative'>
-        <div className='relative min-h-screen backdrop-blur-[1px]'>
-          <Gradients />
-          <Hero />
-          <TerminalAbout />
-          <SkillsSection />
-          <ProjectsSection />
-          <ContactSection />
-        </div>
-      </div>
+    <div className='relative min-h-screen w-max max-w-[1320px]'>
+      <div className='fixed bottom-0 left-[clamp(20px,5vw,72px)] top-0 z-0 w-[1px] bg-[rgba(255,255,255,0.05)]' />
+      <div className='fixed bottom-0 right-[clamp(20px,5vw,72px)] top-0 z-0 w-[1px] bg-[rgba(255,255,255,0.05)]' />
+      <Nav />
+      <Hero />
+      <Stats />
+      <Toolbox />
+      <Experience />
+      <Projects />
+      <RunnerGanme />
+      <Contact />
+      <Footer />
     </div>
   );
 }
