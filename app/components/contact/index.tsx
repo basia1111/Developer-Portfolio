@@ -23,7 +23,7 @@ export function Contact() {
       </div>
       <div className='max-w-[560px]'>
         <p className='mb-[clamp(24px,4vh,40px)] font-body text-[17px] leading-[1.7] text-body'>
-          I'm looking for my first full-time role as a full-stack developer. If you're hiring or just want to chat about code, I'd love to hear from you.
+          I’m always happy to connect and chat about code or web projects. Drop me a message anytime!{' '}
         </p>
         <a
           href='mailto:basia.zygilewicz@gmail.com'

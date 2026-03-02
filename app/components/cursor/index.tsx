@@ -36,7 +36,7 @@ export default function Cursor() {
   return (
     <div
       ref={cursorRef}
-      className={`pointer-events-none fixed z-50 flex items-center justify-center rounded-full border-[1px] transition-[width,height,border-color,background] duration-200 ${hover ? 'h-10 w-10 border-accent bg-accent/10' : 'sm:bllock hidden h-5 w-5 border-primary bg-accent/0'}`}
+      className={`pointer-events-none fixed z-50 hidden items-center justify-center rounded-full border-[1px] transition-[width,height,border-color,background] duration-200 sm:flex ${hover ? 'h-10 w-10 border-accent bg-accent/10' : 'h-5 w-5 border-primary bg-accent/0'}`}
     >
       <div className='pointer-events-none fixed h-1 w-1 rounded-full bg-primary'></div>
     </div>
