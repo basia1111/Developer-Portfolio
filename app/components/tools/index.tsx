@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Github, Code2, FileCode, Server, Atom, ArrowRight, Wind, Database, CircleDot, GitBranch, Plug, Cloud } from 'lucide-react';
+import { Github, Code2, FileCode, Server, Atom, ArrowRight, Wind, Database, CircleDot, GitBranch, Plug, Cloud, Workflow, TestTubeDiagonal } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
 const tools = [
@@ -14,6 +14,8 @@ const tools = [
   { name: 'Git', icon: GitBranch },
   { name: 'REST APIs', icon: Plug },
   { name: 'AWS', icon: Cloud },
+  { name: 'Jest', icon: TestTubeDiagonal },
+  { name: 'GitHub Actions', icon: Workflow },
 ];
 
 export function Toolbox() {
